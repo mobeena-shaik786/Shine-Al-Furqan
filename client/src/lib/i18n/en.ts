@@ -1,0 +1,33 @@
+export const t = {
+  appName: 'Shine Al Furqan',
+  subtitle: 'Quran & Islamic Academy',
+  searchPlaceholder: 'Search students, leads, batches...',
+  dashboard: 'Dashboard',
+  userManagement: 'User Management',
+  administrators: 'Administrators',
+  teachers: 'Teachers',
+  students: 'Students',
+  parents: 'Parents',
+  leadManagement: 'Lead Management',
+  academicManagement: 'Academic Management',
+  courses: 'Courses',
+  batches: 'Batches',
+  classSchedule: 'Class Schedule',
+  syllabus: 'Syllabus',
+  certificates: 'Certificates',
+  reenrollment: 'Student Re-enrollment',
+  attendance: 'Attendance Portal',
+  feedback: 'Student Feedback',
+  fees: 'Fee Management',
+  salaries: 'Salary Management',
+  settings: 'System Settings',
+  reports: 'Reports',
+  notifications: 'Notifications',
+  profile: 'Profile',
+  signOut: 'Sign Out',
+  comingSoon: 'Coming in the next phase',
+  comingSoonDesc:
+    'This module is wired into navigation and will be fully implemented in an upcoming phase.',
+} as const;
+
+export type TranslationKey = keyof typeof t;
