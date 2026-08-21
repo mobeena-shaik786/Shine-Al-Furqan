@@ -5,6 +5,9 @@
 # 1. MongoDB Atlas cluster + connection string
 # 2. SMTP credentials (production refuses MAIL_TRANSPORT=console)
 # 3. Public frontend URL for CLIENT_URL (not localhost)
+#
+# Important: use --include=dev so TypeScript is installed during build
+# (Render sets NODE_ENV=production which otherwise skips devDependencies).
 
 services:
   - type: web
@@ -12,13 +15,12 @@ services:
     runtime: node
     plan: free
     rootDir: server
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: npm run start:prod
     healthCheckPath: /api/v1/health
     envVars:
       - key: NODE_VERSION
         value: "20.19.0"
-    envVars:
       - key: NODE_ENV
         value: production
       - key: COOKIE_SECURE
